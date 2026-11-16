@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M. Mohamed Nafea - Verbe ÊTRE au Présent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- French Flag Tricolor Top Stripe -->
+    <div class="tricolore-header-stripe"></div>
+
+    <!-- App Header & Player HUD -->
+    <header class="app-header">
+        <div class="header-container">
+            <div class="logo-brand" onclick="window.app.switchTab('portfolio')" title="Voir le profil de M. Mohamed Nafea">
+                <img src="img/mohamed_nafea.jpg?v=3" alt="M. Mohamed Nafea" class="teacher-header-avatar">
+                <div>
+                    <div class="brand-title">M. Mohamed Nafea 🇫🇷</div>
+                    <div class="brand-tagline">مسيو محمد نافع • Professeur de Français</div>
+                </div>
+            </div>
+
+            <!-- Player XP & Level HUD -->
+            <div class="player-hud">
+                <div class="level-badge" id="user-level-badge">Niveau 1</div>
+                <div class="xp-container">
+                    <div class="xp-bar-bg">
+                        <div class="xp-bar-fill" id="user-xp-bar" style="width: 0%;"></div>
+                    </div>
+                    <div class="xp-text" id="user-xp-text">0 XP</div>
+                </div>
+            </div>
+
+            <!-- Language and Sound Controls -->
+            <div class="header-actions">
+                <button class="icon-btn" id="sound-toggle-btn" title="Activer / Désactiver le son">🔊</button>
+                <select class="lang-select" id="lang-selector" aria-label="Choisir la langue d'aide">
+                    <option value="fr">🇫🇷 Français</option>
+                    <option value="en">🇬🇧 English</option>
+                    <option value="ar">🇪🇬 العربية</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Title -->
+    <section class="hero-banner">
+        <h1 id="app-main-title">Le Verbe ÊTRE au Présent</h1>
+        <p id="app-main-subtitle">Avec M. Mohamed Nafea — Maîtrisez les 6 formes : suis, es, est, sommes, êtes, sont !</p>
+    </section>
+
+    <!-- Main Navigation Tabs -->
+    <nav class="nav-tabs-wrapper">
+        <div class="nav-tabs">
+            <button class="nav-tab-btn active" data-tab="lessons" id="tab-lessons-btn">
+                <span id="tab-lessons-label">📚 Leçons (Présent)</span>
+            </button>
+            <button class="nav-tab-btn" data-tab="games" id="tab-games-btn">
+                <span id="tab-games-label">🎮 Jeux (Présent)</span>
+            </button>
+            <button class="nav-tab-btn" data-tab="practice" id="tab-practice-btn">
+                <span id="tab-practice-label">✏️ Exercices (Présent)</span>
+            </button>
+            <button class="nav-tab-btn" data-tab="trophies" id="tab-trophies-btn">
+                <span id="tab-trophies-label">🏆 Trophées</span>
+            </button>
+            <button class="nav-tab-btn" data-tab="portfolio" id="tab-portfolio-btn">
+                <span id="tab-portfolio-label">👨‍🏫 M. Mohamed Nafea</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+        <!-- ================================================================
+             TAB 1: LESSONS & DISCOVERY (TABLES, USAGES, PITFALLS)
+             ================================================================ -->
+        <section class="tab-content-panel active" id="tab-lessons">
+            <!-- Tenses Switcher -->
+            <div class="tense-selector-bar" id="tense-selector">
+                <!-- Injected via JavaScript -->
+            </div>
+
+            <!-- Conjugation Cards Grid -->
+            <div id="conjugation-cards-container">
+                <!-- Active tense table injected dynamically -->
+            </div>
+
+            <!-- When to use Être -->
+            <h2 class="section-subheading">💡 Quand utiliser le verbe Être au présent ?</h2>
+            <div class="rules-grid" id="rules-usage-container">
+                <!-- Usage rules injected dynamically -->
+            </div>
+
+            <!-- Common Traps (Être Present) -->
+            <h2 class="section-subheading">⚠️ Les Clés du Verbe ÊTRE (Négation, Questions & Accords)</h2>
+            <div class="pitfalls-grid" id="rules-pitfalls-container">
+                <!-- Pitfalls injected dynamically -->
+            </div>
+        </section>
+
+
+        <!-- ================================================================
+             TAB 2: GAMES ARCADE (5 INTERACTIVE GAMES)
+             ================================================================ -->
+        <section class="tab-content-panel" id="tab-games">
+            <!-- Subnav to switch between games -->
+            <div class="games-subnav">
+                <button class="game-nav-btn active" data-game="balloon" onclick="window.app.switchGame('balloon')">
+                    🎈 1. Bulle Magique
+                </button>
+                <button class="game-nav-btn" data-game="memory" onclick="window.app.switchGame('memory')">
+                    🃏 2. Jeu de Mémoire
+                </button>
+                <button class="game-nav-btn" data-game="sentence" onclick="window.app.switchGame('sentence')">
+                    🧩 3. Constructeur
+                </button>
+                <button class="game-nav-btn" data-game="speed" onclick="window.app.switchGame('speed')">
+                    ⚡ 4. Défi 60s
+                </button>
+                <button class="game-nav-btn" data-game="croissant" onclick="window.app.switchGame('croissant')">
+                    🥐 5. Quiz Croissants
+                </button>
+            </div>
+
+            <!-- Screen 1: Balloon Pop -->
+            <div class="game-screen active" id="game-screen-balloon">
+                <div id="balloon-game-container"></div>
+            </div>
+
+            <!-- Screen 2: Memory Match -->
+            <div class="game-screen" id="game-screen-memory">
+                <div id="memory-game-container"></div>
+            </div>
+
+            <!-- Screen 3: Sentence Builder -->
+            <div class="game-screen" id="game-screen-sentence">
+                <div id="sentence-game-container"></div>
+            </div>
+
+            <!-- Screen 4: Speed Run 60s -->
+            <div class="game-screen" id="game-screen-speed">
+                <div id="speed-game-container"></div>
+            </div>
+
+            <!-- Screen 5: Croissant Millionaire -->
+            <div class="game-screen" id="game-screen-croissant">
+                <div id="croissant-game-container"></div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================
+             TAB 3: PRACTICE DRILLS & FILL IN THE BLANKS
+             ================================================================ -->
+        <section class="tab-content-panel" id="tab-practice">
+            <!-- Rendered by app.renderPractice() -->
+        </section>
+
+
+        <!-- ================================================================
+             TAB 4: TROPHIES & STATS
+             ================================================================ -->
+        <section class="tab-content-panel" id="tab-trophies">
+            <!-- Rendered by app.renderTrophies() -->
+        </section>
+
+
+        <!-- ================================================================
+             TAB 5: PORTFOLIO - M. MOHAMED NAFEA
+             ================================================================ -->
+        <section class="tab-content-panel" id="tab-portfolio">
+            <!-- Rendered by app.renderPortfolio() -->
+        </section>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/sound.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/confetti.js"></script>
+    <script src="js/games.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
